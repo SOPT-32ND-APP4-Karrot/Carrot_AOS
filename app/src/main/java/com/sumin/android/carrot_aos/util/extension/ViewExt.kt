@@ -1,9 +1,12 @@
 package com.sumin.android.carrot_aos.util.extension
 
 import android.content.Context
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 
 // 화면 전체
@@ -35,4 +38,10 @@ fun View.hideKeyboard() {
     } catch (e: Exception) {
         Log.e("error", e.message.toString())
     }
+}
+
+fun TextView.underLine() {
+    val content = SpannableString(this.text.toString())
+    content.setSpan(UnderlineSpan(), 0, content.length, 0)
+    this.text = content
 }
