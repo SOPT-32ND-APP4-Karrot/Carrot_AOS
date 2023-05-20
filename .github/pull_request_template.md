@@ -1,5 +1,5 @@
 ## *Related issue*
-closed #이슈넘버
+- closed #이슈넘버
 
 ## *Description*
 - 작업 내용 (상세히, 보는 사람 이해 쉽게)
