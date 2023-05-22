@@ -28,6 +28,9 @@
         android:textAppearance="@style/TextAppearance.Carrot.Body5"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_chat_left_time"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/iv_chat_left_profile"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="저 45분은 쫌 어려울거같아요.\n50분 괜찮으실까요?" />
@@ -40,7 +43,8 @@
         android:textAppearance="@style/TextAppearance.Carrot.Detail2"
         android:textColor="@color/gray_3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_chat_left_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_chat_left_text"
         tools:text="오후 6:28" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

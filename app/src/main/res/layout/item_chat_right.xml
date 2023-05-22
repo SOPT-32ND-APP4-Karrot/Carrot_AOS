@@ -14,7 +14,10 @@
         android:textAppearance="@style/TextAppearance.Carrot.Detail2"
         android:textColor="@color/gray_3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tv_chat_right_text"
+        app:layout_constraintEnd_toStartOf="@+id/tv_chat_right_text"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="오후 6:18" />
 
     <TextView
@@ -28,8 +31,10 @@
         android:paddingBottom="6dp"
         android:textAppearance="@style/TextAppearance.Carrot.Body5"
         android:textColor="@color/white"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_chat_right_time"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="45분까지 광흥창역 1번출구로 갈게요!" />
 
