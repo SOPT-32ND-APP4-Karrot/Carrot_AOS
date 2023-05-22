@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="7dp">
+
+    <ImageView
+        android:id="@+id/iv_chat_left_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:src="@drawable/ic_chat_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_chat_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/shape_gray_1_fill_20_rect"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="7dp"
+        android:textAppearance="@style/TextAppearance.Carrot.Body5"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_chat_left_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="저 45분은 쫌 어려울거같아요.\n50분 괜찮으실까요?" />
+
+    <TextView
+        android:id="@+id/tv_chat_left_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAppearance="@style/TextAppearance.Carrot.Detail2"
+        android:textColor="@color/gray_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_chat_left_text"
+        tools:text="오후 6:28" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
