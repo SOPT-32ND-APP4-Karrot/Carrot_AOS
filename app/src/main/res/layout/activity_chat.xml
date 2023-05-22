@@ -158,7 +158,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_chat_extended_app_bar_title"
             tools:text="(가격제안불가)" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_chat_extended_app_bar_view_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -170,7 +170,9 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:paddingStart="12dp"
+            android:paddingTop="9dp"
             android:paddingEnd="11dp"
+            android:paddingBottom="10dp"
             android:text="거래 후기 보기"
             android:textAppearance="@style/TextAppearance.Carrot.Body6"
             android:textColor="@color/black"
