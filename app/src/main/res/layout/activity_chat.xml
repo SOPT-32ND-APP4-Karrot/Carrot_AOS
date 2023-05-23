@@ -10,6 +10,7 @@
         android:id="@+id/layout_chat_app_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,9 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="21dp"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="27dp"
             android:src="@drawable/ic_chat_arrowleft"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="20dp"
             android:textAppearance="@style/TextAppearance.Carrot.Title"
             android:textColor="?attr/colorOnBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_chat_app_bar_arrowleft"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="마포아씨" />
@@ -44,19 +41,16 @@
             android:id="@+id/tv_chat_app_bar_manner_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/shape_light_green_fill_19_rect"
             android:paddingVertical="4dp"
             android:paddingStart="5dp"
             android:paddingEnd="6dp"
             android:textAppearance="@style/TextAppearance.Carrot.Detail1"
             android:textColor="@color/green"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_chat_app_bar_username"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_chat_app_bar_username"
             tools:text="40.5°C" />
 
         <ImageView
@@ -65,9 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="24dp"
             android:src="@drawable/ic_chat_phone"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/iv_chat_app_bar_more"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,9 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginBottom="28dp"
             android:src="@drawable/ic_chat_more"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,6 +79,7 @@
         android:id="@+id/layout_chat_extended_app_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingBottom="17dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_chat_app_bar">
@@ -164,7 +155,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="17dp"
             android:background="@drawable/shape_gray_2_stroke_3_rect"
             android:drawableLeft="@drawable/ic_chat_pen"
             android:minWidth="0dp"
@@ -176,7 +166,6 @@
             android:text="거래 후기 보기"
             android:textAppearance="@style/TextAppearance.Carrot.Body6"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_chat_extended_app_bar_sale_img" />
 
@@ -207,6 +196,7 @@
         android:id="@+id/layout_chat_bottom_app_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingBottom="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -217,9 +207,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="17dp"
-            android:layout_marginBottom="8dp"
             android:src="@drawable/ic_chat_add"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -228,11 +216,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="11dp"
             android:layout_marginEnd="9dp"
-            android:layout_marginBottom="3dp"
             android:background="@drawable/shape_gray_1_fill_21_rect"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/iv_chat_bottom_app_bar_send"
             app:layout_constraintStart_toEndOf="@+id/iv_chat_bottom_app_bar_add"
             app:layout_constraintTop_toTopOf="parent">
@@ -244,14 +230,12 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="6dp"
                 android:background="@null"
                 android:hint="메시지 보내기"
                 android:inputType="textMultiLine"
                 android:textAppearance="@style/TextAppearance.Carrot.Body2"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_3"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/iv_chat_bottom_app_bar_emoji"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -262,9 +246,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="9dp"
-                android:layout_marginBottom="3dp"
                 android:src="@drawable/ic_chat_emoji"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -276,9 +258,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="8dp"
             android:src="@drawable/ic_chat_send"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
