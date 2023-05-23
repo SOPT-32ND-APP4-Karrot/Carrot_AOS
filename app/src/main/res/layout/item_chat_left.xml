@@ -32,7 +32,6 @@
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/iv_chat_left_profile"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="저 45분은 쫌 어려울거같아요.\n50분 괜찮으실까요?" />
 
     <TextView

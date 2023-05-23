@@ -35,7 +35,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_chat_right_time"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="45분까지 광흥창역 1번출구로 갈게요!" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

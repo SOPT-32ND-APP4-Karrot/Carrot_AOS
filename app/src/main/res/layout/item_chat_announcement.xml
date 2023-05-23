@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="12dp"
     android:layout_marginBottom="5dp"
-    android:background="@drawable/shape_light_skyblue_11_rect">
+    android:background="@drawable/shape_light_skyblue_11_rect"
+    android:paddingBottom="17dp">
 
     <TextView
         android:id="@+id/item_chat_announcement_title"
@@ -37,11 +38,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="-1dp"
-        android:layout_marginBottom="17dp"
         android:text="@string/item_chat_announcement_content2"
         android:textAppearance="@style/TextAppearance.Carrot.Body5"
         android:textColor="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/item_chat_announcement_title" />
 
@@ -50,11 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:layout_marginTop="-1dp"
-        android:layout_marginBottom="17dp"
         android:text="자세히 보기"
         android:textAppearance="@style/TextAppearance.Carrot.Body5"
         android:textColor="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/item_chat_announcement_content2"
         app:layout_constraintTop_toBottomOf="@+id/item_chat_announcement_content1" />
 
