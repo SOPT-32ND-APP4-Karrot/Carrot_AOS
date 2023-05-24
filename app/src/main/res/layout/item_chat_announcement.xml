@@ -11,7 +11,7 @@
     android:paddingBottom="17dp">
 
     <TextView
-        android:id="@+id/item_chat_announcement_title"
+        android:id="@+id/tv_item_chat_announcement_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -22,15 +22,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/item_chat_announcement_content"
+        android:id="@+id/tv_item_chat_announcement_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
         android:textAppearance="@style/TextAppearance.Carrot.Body5"
         android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/item_chat_announcement_title"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_chat_announcement_title"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_chat_announcement_title"
         tools:text="        마포아씨님과 거래 예약을 했어요. 당근페이에 가입하면 간편하게 송금할 수 있어요." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
