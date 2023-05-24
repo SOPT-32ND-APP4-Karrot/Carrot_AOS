@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/iv_userid_saleimg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginTop="20dp"
@@ -22,11 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textAppearance="@style/TextAppearance.Carrot.Body5"
         android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_userid_saleimg"
-        tools:text="스타벅스 써머콘페티 워터..." />
+        tools:text="동교동 이웃 dd님에게만 보이는 순간이동 포털이 열렸어요" />
 
     <TextView
         android:id="@+id/tv_userid_price"
@@ -37,7 +40,7 @@
         android:textAppearance="@style/TextAppearance.Carrot.Body3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_userid_saletitle"
-        tools:text="10,000원" />
+       />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
