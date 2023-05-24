@@ -14,6 +14,7 @@ class ChatViewModel : ViewModel() {
     private val _chatResult: MutableLiveData<ChatResponse> = MutableLiveData()
     val chatResult: LiveData<ChatResponse> = _chatResult
     private val chatService = ServicePool.chatService
+    val chatInput: MutableLiveData<String> = MutableLiveData()
 
     fun connectChatOnline(chatRoodId: Long) {
         chatService.connectChatOnline(
