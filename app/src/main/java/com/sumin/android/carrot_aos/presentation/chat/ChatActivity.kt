@@ -18,8 +18,9 @@ class ChatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel.connectChatOnline(1)
-
         setChatResultObserver()
+
+        ivChatAppBarArrowleftClickListener()
     }
 
     private fun setChatResultObserver() {
@@ -51,5 +52,11 @@ class ChatActivity : AppCompatActivity() {
         chatAdapter.setSellerInfo(seller)
         chatAdapter.submitList(chatMessageList)
         binding.rvChatChatting.adapter = chatAdapter
+    }
+
+    private fun ivChatAppBarArrowleftClickListener() {
+        binding.ivChatAppBarArrowleft.setOnClickListener {
+            finish()
+        }
     }
 }
