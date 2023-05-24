@@ -142,11 +142,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="-1dp"
             android:textAppearance="@style/TextAppearance.Carrot.Body5"
             android:textColor="@color/gray_4"
             app:layout_constraintStart_toEndOf="@+id/tv_chat_extended_app_bar_price"
-            app:layout_constraintTop_toBottomOf="@+id/tv_chat_extended_app_bar_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_chat_extended_app_bar_status"
             tools:text="(가격제안불가)" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -169,15 +168,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_chat_extended_app_bar_sale_img" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/gray_1"
-            app:layout_constraintBottom_toBottomOf="@id/layout_chat_extended_app_bar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_1"
+        app:layout_constraintBottom_toBottomOf="@id/layout_chat_extended_app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat_chatting"
