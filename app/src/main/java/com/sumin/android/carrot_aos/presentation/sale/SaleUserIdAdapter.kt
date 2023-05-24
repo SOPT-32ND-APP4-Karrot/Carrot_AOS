@@ -26,7 +26,7 @@ class SaleUserIdAdapter: ListAdapter<SaleUserIdResponse.Data.Sale, SaleUserIdAda
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(item: SaleUserIdResponse.Data.Sale) {
-            binding.ivUseridSaleimg.load(item.saleImgUrl)
+            binding.ivUseridSaleimg.loadImage(item.saleImgUrl)
             binding.tvUseridSaletitle.text = item.title
             binding.tvUseridPrice.text = item.price.toString()
         }
