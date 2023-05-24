@@ -92,6 +92,7 @@
             android:layout_marginTop="7dp"
             android:background="@drawable/shape_image_fill_4_rect"
             android:clipToOutline="true"
+            android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
