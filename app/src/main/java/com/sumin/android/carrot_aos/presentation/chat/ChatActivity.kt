@@ -16,9 +16,11 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.viewModel = viewModel
 
         viewModel.connectChatOnline(1)
         setChatResultObserver()
+        changeSendBtnImageResource()
 
         ivChatAppBarArrowleftClickListener()
     }
@@ -27,6 +29,15 @@ class ChatActivity : AppCompatActivity() {
         viewModel.chatResult.observe(this) { chatResponse ->
             setAppBarView(chatResponse)
             connectChatAdapter(chatResponse.data.chatMessageList, chatResponse.data.seller)
+        }
+    }
+
+    private fun changeSendBtnImageResource() {
+        viewModel.chatInput.observe(this) {
+            with(binding.ivChatBottomAppBarSend) {
+                if (viewModel.chatInput.value.isNullOrBlank()) setImageResource(R.drawable.ic_chat_send)
+                else setImageResource(R.drawable.ic_chat_send_enable)
+            }
         }
     }
 
