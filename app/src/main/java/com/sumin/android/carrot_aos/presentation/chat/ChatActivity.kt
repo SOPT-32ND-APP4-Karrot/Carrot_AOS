@@ -7,6 +7,7 @@ import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.data.model.response.ChatResponse
 import com.sumin.android.carrot_aos.databinding.ActivityChatBinding
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
+import com.sumin.android.carrot_aos.util.extension.changePriceFormat
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChatBinding
@@ -47,7 +48,7 @@ class ChatActivity : AppCompatActivity() {
             ivChatExtendedAppBarSaleImg.loadImage(chatResponse.data.sale.saleImgUrl)
             tvChatExtendedAppBarStatus.text = chatResponse.data.sale.status
             tvChatExtendedAppBarTitle.text = chatResponse.data.sale.title
-            tvChatExtendedAppBarPrice.text = "${chatResponse.data.sale.price}원"
+            tvChatExtendedAppBarPrice.text = "${changePriceFormat(chatResponse.data.sale.price)}원"
             tvChatExtendedAppBarIsSuggest.text =
                 if (chatResponse.data.sale.isSuggest) getString(R.string.chat_price_suggestion_available) else getString(
                     R.string.chat_price_suggestion_unavailable
