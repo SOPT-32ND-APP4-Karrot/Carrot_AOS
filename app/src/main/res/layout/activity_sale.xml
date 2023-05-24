@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingClass">
+
+        <ImageView
+            android:id="@+id/ic_sale_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="19dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_sale_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_sale_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_sale_home"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_sale_back"
+            app:layout_constraintStart_toEndOf="@+id/ic_sale_back"
+            app:layout_constraintTop_toTopOf="@+id/ic_sale_back" />
+
+        <ImageView
+            android:id="@+id/ic_sale_middle_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_sale_middle_list"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_sale_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ic_sale_back" />
+
+        <ImageView
+            android:id="@+id/ic_sale_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_sale_share"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_sale_back"
+            app:layout_constraintEnd_toStartOf="@id/ic_sale_middle_list"
+            app:layout_constraintTop_toTopOf="@+id/ic_sale_back" />
+
+
+        <ScrollView
+            android:id="@+id/sv_saleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_saleid_saleimg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_sale_exmpic3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_saleid_userimg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_sale_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_username"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="17dp"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body1"
+                    app:layout_constraintStart_toEndOf="@+id/iv_saleid_userimg"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg"
+                    tools:text="마포아씨" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_userposition"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body5"
+                    android:textColor="@color/gray_5"
+                    app:layout_constraintStart_toEndOf="@+id/iv_saleid_userimg"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_username"
+                    tools:text="서강동" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="186dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="40.4°C"
+                    android:textAppearance="@style/TextAppearance.Carrot.Number3"
+                    android:textColor="@color/green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg" />
+
+                <ProgressBar
+                    android:id="@+id/pb_saleid_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="183dp"
+                    android:layout_marginEnd="16dp"
+                    android:max="100"
+                    android:progress="60"
+                    android:progressTint="@color/green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_temperature" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_mannertemtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="14dp"
+                    android:text="매너온도"
+                    android:textAppearance="@style/TextAppearance.Carrot.Detail2"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pb_saleid_progressbar" />
+
+                <View
+                    android:id="@+id/view_saleid_line"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/gray_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_mannertemtext" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="22dp"
+                    android:text="스타벅스 다이어리 그린 9,000(쿠폰 없음)"
+                    android:textAppearance="@style/TextAppearance.Carrot.Title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_saleid_line" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="여성잡화"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_saleid_title" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="·1분전"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_saleid_category"
+                    app:layout_constraintStart_toEndOf="@id/tv_saleid_category"
+                    app:layout_constraintTop_toTopOf="@+id/tv_saleid_category" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_likesee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="19dp"
+                    android:text="관심  · 조회"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_title" />
+
+
+                <TextView
+                    android:id="@+id/tv_saleid_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:text="쿠폰 빼고 드려요\n직거래시 9,000(광흥창역, 광화문역등)\n택배거래시 택배비 발생합니다"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_likesee" />
+
+                <TextView
+                    android:id="@+id/tv_saleid_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="41dp"
+                    android:text="이 게시글 신고하기"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_description" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_sale_ad_bluerectangle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/ic_sale_bluerectangle_saleid"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_report">
+
+                    <TextView
+                        android:id="@+id/tv_saleid_tip1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="16dp"
+                        android:text="거래팁"
+                        android:textAppearance="@style/TextAppearance.Carrot.Body3"
+                        android:textColor="@color/blue"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_saleid_tip2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+
+                        android:id="@+id/tv_saleid_tip2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="17dp"
+                        android:text="마포아씨님과 거래할 때, 당근페이로 간편하게 "
+                        android:textAppearance="@style/TextAppearance.Carrot.Body5"
+                        android:textColor="@color/blue"
+                        app:layout_constraintStart_toEndOf="@+id/tv_saleid_tip1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_saleid_tip3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="14dp"
+                        android:text="송금 할 수 있어요."
+                        android:textAppearance="@style/TextAppearance.Carrot.Body5"
+                        android:textColor="@color/blue"
+                        app:layout_constraintStart_toStartOf="@+id/tv_saleid_tip1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_saleid_tip1" />
+
+                    <TextView
+                        android:id="@+id/tv_saleid_tip4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="14dp"
+                        android:text="  자세히 보기"
+                        android:textAppearance="@style/TextAppearance.Carrot.Body5"
+                        android:textColor="@color/blue"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_saleid_tip3"
+                        app:layout_constraintStart_toEndOf="@+id/tv_saleid_tip3"
+                        app:layout_constraintTop_toTopOf="@+id/tv_saleid_tip3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_advertisement_line"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/gray_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_sale_ad_bluerectangle" />
+
+                <TextView
+                    android:id="@+id/tv_advertisement_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="혹시 이 상품 찾으시나요?"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_advertisement_line" />
+
+                <ImageView
+                    android:id="@+id/iv_advertisement_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:src="@drawable/ic_sale_exmpic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_advertisement_saletitle" />
+
+                <TextView
+                    android:id="@+id/tv_advertisement_saletitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="12dp"
+                    android:text="2023 스타벅스 다이어리, 플래\n너 프리퀀시"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body2"
+                    app:layout_constraintStart_toEndOf="@id/iv_advertisement_image"
+                    app:layout_constraintTop_toBottomOf="@id/tv_advertisement_title" />
+
+                <ImageView
+                    android:id="@+id/iv_advertisement_threedot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/ic_sale_middle_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_advertisement_saletitle" />
+
+                <TextView
+                    android:id="@+id/tv_advertisement_adimg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_sale_bluerectangle_ad"
+                    android:paddingVertical="2dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="3dp"
+                    android:text="광고"
+                    android:textAppearance="@style/TextAppearance.Carrot.Detail1"
+                    android:textColor="@color/blue"
+                    app:layout_constraintStart_toEndOf="@id/iv_advertisement_image"
+                    app:layout_constraintTop_toBottomOf="@id/tv_advertisement_saletitle" />
+
+                <TextView
+                    android:id="@+id/tv_advertisement_nickname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="도담도담샵"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_advertisement_adimg"
+                    app:layout_constraintStart_toEndOf="@id/tv_advertisement_adimg"
+                    app:layout_constraintTop_toTopOf="@+id/tv_advertisement_adimg" />
+
+                <TextView
+                    android:id="@+id/tv_advertisement_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    android:text="24,500원"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body3"
+                    app:layout_constraintStart_toEndOf="@id/iv_advertisement_image"
+                    app:layout_constraintTop_toBottomOf="@id/tv_advertisement_adimg" />
+
+                <TextView
+                    android:id="@+id/tv_advertisement_newsaletext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="125dp"
+                    android:text="새 상품 구매하기"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintEnd_toStartOf="@id/iv_advertisement_newproduct"
+                    app:layout_constraintTop_toBottomOf="@id/view_advertisement_line" />
+
+                <ImageView
+                    android:id="@+id/iv_advertisement_newproduct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="123dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_sale_new_product"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_advertisement_line" />
+
+                <View
+                    android:id="@+id/view_advertisement_line2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="21dp"
+                    android:background="@color/gray_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_advertisement_image" />
+
+                <TextView
+                    android:id="@+id/tv_userid_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="마포아씨님의 판매 상품"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_advertisement_line2" />
+
+                <ImageView
+                    android:id="@+id/iv_userid_newproduct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="11dp"
+                    android:src="@drawable/ic_sale_sale_product"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_userid_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_userid_title" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_userid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_userid_title"
+                    tools:listitem="@layout/item_userid" />
+
+                <View
+                    android:id="@+id/view_recommendation_line"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="23dp"
+                    android:background="@color/gray_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_userid" />
+
+
+                <TextView
+                    android:id="@+id/tv_recommendation_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="23dp"
+                    android:text="이 글과 함께 봤어요"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_recommendation_line" />
+
+                <ImageView
+                    android:id="@+id/iv_recommendation_newproduct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_sale_new_product"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_recommendation_line" />
+
+                <TextView
+                    android:id="@+id/tv_recommendation_showall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="추천 게시물 모두 보기"
+                    android:textAppearance="@style/TextAppearance.Carrot.Body4"
+                    android:textColor="@color/gray_4"
+                    app:layout_constraintEnd_toStartOf="@id/iv_recommendation_newproduct"
+                    app:layout_constraintTop_toBottomOf="@id/view_recommendation_line" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_recommendation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="100dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_recommendation_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_sale_bottombar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/view_like_line"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="60dp"
+                android:background="@color/gray_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_haert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:src="@drawable/ic_sale_heart_default"
+                app:layout_constraintBottom_toBottomOf="@id/tv_like_pricesuggest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_like_price" />
+
+            <View
+                android:id="@+id/view_like_line2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="7dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/gray_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_haert"
+                app:layout_constraintTop_toBottomOf="@id/view_like_line" />
+
+            <TextView
+                android:id="@+id/tv_like_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="9,000원"
+                android:textAppearance="@style/TextAppearance.Carrot.Body3"
+                app:layout_constraintBottom_toTopOf="@id/tv_like_pricesuggest"
+                app:layout_constraintStart_toEndOf="@id/view_like_line2"
+                app:layout_constraintTop_toBottomOf="@id/view_like_line" />
+
+            <TextView
+                android:id="@+id/tv_like_pricesuggest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="9dp"
+                android:text="가격 제안 불가"
+                android:textAppearance="@style/TextAppearance.Carrot.Body6"
+                android:textColor="@color/gray_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/view_like_line2" />
+
+            <ImageView
+                android:id="@+id/iv_like_carrotimg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_sale_carrot_pay"
+                app:layout_constraintBottom_toBottomOf="@id/tv_like_price"
+                app:layout_constraintStart_toEndOf="@id/tv_like_price"
+                app:layout_constraintTop_toTopOf="@id/tv_like_price" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/shape_image_fill_4_rect"
+                android:backgroundTint="@color/orange"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="12dp"
+                android:text="채팅하기"
+                android:textAppearance="@style/TextAppearance.Carrot.Body6"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_like_line" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
