@@ -3,10 +3,10 @@ package com.sumin.android.carrot_aos.presentation.chat
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import coil.load
 import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.data.model.response.ChatResponse
 import com.sumin.android.carrot_aos.databinding.ActivityChatBinding
+import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChatBinding
@@ -25,14 +25,14 @@ class ChatActivity : AppCompatActivity() {
     private fun setChatResultObserver() {
         viewModel.chatResult.observe(this) { chatResponse ->
             setAppBarView(chatResponse)
-            connectChatAdapter(chatResponse.data.chatMessageList, chatResponse.data.seller.nickname)
+            connectChatAdapter(chatResponse.data.chatMessageList, chatResponse.data.seller)
         }
     }
 
     private fun setAppBarView(chatResponse: ChatResponse) {
         with(binding) {
             tvChatAppBarUsername.text = chatResponse.data.seller.nickname
-            ivChatExtendedAppBarSaleImg.load(chatResponse.data.sale.saleImgUrl)
+            ivChatExtendedAppBarSaleImg.loadImage(chatResponse.data.sale.saleImgUrl)
             tvChatExtendedAppBarStatus.text = chatResponse.data.sale.status
             tvChatExtendedAppBarTitle.text = chatResponse.data.sale.title
             tvChatExtendedAppBarPrice.text = "${chatResponse.data.sale.price}원"
@@ -45,10 +45,10 @@ class ChatActivity : AppCompatActivity() {
 
     private fun connectChatAdapter(
         chatMessageList: List<ChatResponse.ChatMessage>,
-        sellerName: String
+        seller: ChatResponse.Seller
     ) {
         val chatAdapter = ChatAdapter(this)
-        chatAdapter.setSellerId(sellerName)
+        chatAdapter.setSellerInfo(seller)
         chatAdapter.submitList(chatMessageList)
         binding.rvChatChatting.adapter = chatAdapter
     }
