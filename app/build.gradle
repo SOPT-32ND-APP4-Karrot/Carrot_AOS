@@ -23,6 +23,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "CARROT_BASE_URL", properties["carrot.base.url"]
         buildConfigField "String", "AUTH_BASE_URL", properties["auth.base.url"]
     }
 
@@ -43,8 +44,6 @@ android {
         viewBinding true
         dataBinding true
     }
-
-
 }
 
 dependencies {
