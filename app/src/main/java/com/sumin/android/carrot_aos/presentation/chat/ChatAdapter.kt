@@ -29,7 +29,7 @@ class ChatAdapter(context: Context) :
         private val binding: ItemChatRightBinding,
         private val seller: ChatResponse.Seller
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: ChatResponse.ChatMessage) {
+        fun onBind(data: ChatResponse.ChatMessage, isTopSpace: Boolean) {
             with(binding) {
                 tvChatRightText.text = data.content
                 tvChatRightTime.text = changeTimeFormat(data.time)
@@ -40,6 +40,9 @@ class ChatAdapter(context: Context) :
                     HtmlCompat.fromHtml(announcementContent, HtmlCompat.FROM_HTML_MODE_LEGACY)
 
                 if (!data.hasKeyword) layoutChatRightAnnouncement.visibility = View.GONE
+                if (isTopSpace) {
+                    layoutChatRightTopSpace.visibility = View.GONE
+                }
             }
         }
     }
@@ -84,7 +87,11 @@ class ChatAdapter(context: Context) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is ChatRightViewHolder -> holder.onBind(currentList[position])
+            is ChatRightViewHolder -> holder.onBind(
+                currentList[position],
+                (position != 0) && (currentList[position].writer == currentList[position - 1].writer)
+            )
+
             is ChatLeftViewHolder -> holder.onBind(
                 currentList[position],
                 (position != 0) && (currentList[position].writer == currentList[position - 1].writer)
