@@ -12,5 +12,9 @@
         <item name="colorOnSurface">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?android:colorBackground</item>
+        
+        <!-- etc -->
+        <item name="android:buttonStyle">@style/Widget.Carrot.Button</item>
+
     </style>
 </resources>
