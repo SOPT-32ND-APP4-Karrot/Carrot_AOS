@@ -17,23 +17,13 @@ data class ReviewResponse(
         @SerialName("reviewId")
         val reviewId: Long,
         @SerialName("senderReview")
-        val senderReview: SenderReview,
+        val senderReview: Review,
         @SerialName("receiverReview")
-        val receiverReview: ReceiverReview,
+        val receiverReview: Review,
     )
 
     @Serializable
-    data class SenderReview(
-        @SerialName("reviewContentId")
-        val reviewContentId: Long,
-        @SerialName("content")
-        val content: List<String>,
-        @SerialName("writer")
-        val writer: Writer,
-    )
-
-    @Serializable
-    data class ReceiverReview(
+    data class Review(
         @SerialName("reviewContentId")
         val reviewContentId: Long,
         @SerialName("content")
