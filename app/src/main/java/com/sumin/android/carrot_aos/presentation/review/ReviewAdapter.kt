@@ -20,10 +20,12 @@ class ReviewAdapter(context: Context) :
     ) {
     private val inflater by lazy { LayoutInflater.from(context) }
     private lateinit var sellerInfo: ReviewResponse.Writer
+    private val context = context
 
     class ReviewCardViewHolder(
         private val binding: ItemReviewCardBinding,
-        private val seller: ReviewResponse.Writer
+        private val seller: ReviewResponse.Writer,
+        private val context: Context
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ReviewResponse.Review, viewType: Int) {
             when (viewType) {
@@ -38,6 +40,10 @@ class ReviewAdapter(context: Context) :
                     }
                 }
             }
+
+            val reviewCardAdapter = ReviewCardAdapter(context = context)
+            reviewCardAdapter.submitList(data.content)
+            binding.rvItemReviewCardText.adapter = reviewCardAdapter
         }
     }
 
@@ -56,7 +62,7 @@ class ReviewAdapter(context: Context) :
 
             else -> {
                 val binding = ItemReviewCardBinding.inflate(inflater, parent, false)
-                ReviewCardViewHolder(binding, sellerInfo)
+                ReviewCardViewHolder(binding, sellerInfo, context)
             }
         }
     }
