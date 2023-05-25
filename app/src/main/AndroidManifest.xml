@@ -17,6 +17,14 @@
 
         <activity
             android:name=".presentation.sale.SaleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.review.ReviewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
