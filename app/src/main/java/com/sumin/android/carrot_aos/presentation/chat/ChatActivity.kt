@@ -27,6 +27,7 @@ class ChatActivity : AppCompatActivity() {
 
         ivChatAppBarArrowleftClickListener()
         ivChatBottomAppBarSendClickListener()
+        btnChatExtendedAppBarViewReviewClickListener()
     }
 
     private fun setChatResultObserver() {
@@ -86,6 +87,15 @@ class ChatActivity : AppCompatActivity() {
                     etChatBottomAppBarInput.text = null
                 }
             }
+        }
+    }
+
+    private fun btnChatExtendedAppBarViewReviewClickListener() {
+        binding.btnChatExtendedAppBarViewReview.setOnClickListener {
+//            val intent = Intent(this, reviewView::class.java).apply {
+//                putExtra("reviewId", viewModel.chatResult.value?.data?.reviewId)
+//            }
+//            startActivity(intent)
         }
     }
 }
