@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.databinding.FragmentHomeBinding
+import com.sumin.android.carrot_aos.databinding.FragmentNearbyBinding
 import com.sumin.android.carrot_aos.presentation.base.BindingFragment
 
-class NearbyFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class NearbyFragment : BindingFragment<FragmentNearbyBinding>(R.layout.fragment_nearby) {
 
 }
