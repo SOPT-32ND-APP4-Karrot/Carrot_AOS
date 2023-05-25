@@ -23,6 +23,7 @@ class ChatAdapter(context: Context) :
     ) {
     private val inflater by lazy { LayoutInflater.from(context) }
     private lateinit var sellerInfo: ChatResponse.Seller
+    private lateinit var myInfo: ChatResponse.Writer
 
     class ChatRightViewHolder(
         private val binding: ItemChatRightBinding,
@@ -93,8 +94,11 @@ class ChatAdapter(context: Context) :
 
     override fun getItemViewType(position: Int): Int {
         return when (currentList[position].writer.nickname) {
-            sellerInfo.nickname -> VIEW_TYPE_CHAT_RIGHT
-            else -> VIEW_TYPE_CHAT_LEFT
+            sellerInfo.nickname -> VIEW_TYPE_CHAT_LEFT
+            else -> {
+                myInfo = currentList[position].writer
+                VIEW_TYPE_CHAT_RIGHT
+            }
         }
     }
 
