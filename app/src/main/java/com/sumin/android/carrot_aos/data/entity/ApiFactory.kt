@@ -3,13 +3,14 @@ package com.sumin.android.carrot_aos.data.entity
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.sumin.android.carrot_aos.BuildConfig
 import com.sumin.android.carrot_aos.data.service.ChatService
+import com.sumin.android.carrot_aos.data.service.UserIdService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
-object ChatApi {
+object ApiFactory {
     private const val BASE_URL = BuildConfig.CARROT_BASE_URL
 
     private val client by lazy {
@@ -30,5 +31,6 @@ object ChatApi {
 }
 
 object ServicePool {
-    val chatService = ChatApi.create<ChatService>()
+    val chatService = ApiFactory.create<ChatService>()
+    val UserIdService = ApiFactory.create<UserIdService>()
 }
