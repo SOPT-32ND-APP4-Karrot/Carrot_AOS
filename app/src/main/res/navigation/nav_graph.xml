@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.sumin.android.carrot_aos.presentation.home.HomeFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/town_fragment"
+        android:name="com.sumin.android.carrot_aos.presentation.home.TownFragment"
+        android:label="fragment_my_page"
+        tools:layout="@layout/fragment_town" />
+    <fragment
+        android:id="@+id/nearby_fragment"
+        android:name="com.sumin.android.carrot_aos.presentation.home.NearbyFragment"
+        android:label="fragment_follower"
+        tools:layout="@layout/fragment_nearby" />
+    <fragment
+        android:id="@+id/chat_fragment"
+        android:name="com.sumin.android.carrot_aos.presentation.home.ChatFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/my_info_fragment"
+        android:name="com.sumin.android.carrot_aos.presentation.home.MyInfoFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_my_info" />
+
+</navigation>
