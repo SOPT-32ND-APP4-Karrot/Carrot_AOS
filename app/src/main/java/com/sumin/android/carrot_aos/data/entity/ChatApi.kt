@@ -1,14 +1,16 @@
+package com.sumin.android.carrot_aos.data.entity
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.sumin.android.carrot_aos.BuildConfig
-import com.sumin.android.carrot_aos.data.service.UserIdService
+import com.sumin.android.carrot_aos.data.service.ChatService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
-object SaleApiFactory {
+object ChatApi {
+    private const val BASE_URL = BuildConfig.CARROT_BASE_URL
 
     private val client by lazy {
         OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().apply {
@@ -17,29 +19,16 @@ object SaleApiFactory {
         }).build()
     }
 
-
-    val retrofitForAuth: Retrofit by lazy {
-        Retrofit.Builder().baseUrl(BuildConfig.AUTH_BASE_URL)
-            .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
-            .client(client).build()
-    }
-
-    inline fun <reified T> createAuthService(): T = retrofitForAuth.create<T>(T::class.java)
-
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl(BuildConfig.AUTH_BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
             .build()
     }
 
-
     inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
 }
 
-object SaleServicePool {
-    val UserIdService = SaleApiFactory.create<UserIdService>()
-
+object ServicePool {
+    val chatService = ChatApi.create<ChatService>()
 }
-
-

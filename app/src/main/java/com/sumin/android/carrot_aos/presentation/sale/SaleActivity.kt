@@ -1,16 +1,18 @@
 package com.sumin.android.carrot_aos.presentation.sale
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import com.sumin.android.carrot_aos.R
+import com.sumin.android.carrot_aos.data.entity.ServicePool
 import com.sumin.android.carrot_aos.data.model.response.SaleUserIdResponse
 import com.sumin.android.carrot_aos.databinding.ActivitySaleBinding
 import com.sumin.android.carrot_aos.presentation.base.BindingActivity
+import com.sumin.android.carrot_aos.presentation.chat.ChatActivity
 import retrofit2.Call
 import retrofit2.Response
 
 class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale) {
-    private val SaleUserIdService = SaleServicePool.UserIdService
+    private val SaleUserIdService = ServicePool.UserIdService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +39,15 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
             }
 
         })
+
+        btnSaleChattingClickListener()
     }
 
-
+    private fun btnSaleChattingClickListener() {
+        binding.btnSaleChatting.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            startActivity(intent)
+        }
+    }
 }
 
