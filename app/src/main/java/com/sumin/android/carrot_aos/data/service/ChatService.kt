@@ -9,7 +9,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ChatService {
-    //@Header("Content-Type: application/json")
     @GET("/chat/{chatRoomId}")
     fun connectChatOnline(
         @Path("chatRoomId") chatRoomId: Long,
