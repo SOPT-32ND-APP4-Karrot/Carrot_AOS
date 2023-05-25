@@ -94,10 +94,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun btnChatExtendedAppBarViewReviewClickListener() {
         binding.btnChatExtendedAppBarViewReview.setOnClickListener {
-            val intent = Intent(this, ReviewActivity::class.java).apply {
-                putExtra("reviewId", viewModel.chatResult.value?.data?.reviewId)
-            }
-            startActivity(intent)
+            startActivity(Intent(this, ReviewActivity::class.java))
         }
     }
 }

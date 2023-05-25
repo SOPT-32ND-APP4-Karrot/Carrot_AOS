@@ -15,7 +15,7 @@ class ReviewActivity : AppCompatActivity() {
         binding = ActivityReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.connectReviewOnline(intent.getStringExtra("reviewId")?.toLong() ?: 0)
+        viewModel.connectReviewOnline(REVIEW_ID.toLong())
         setReviewResultObserver()
 
         ivReviewAppBarArrowleftClickListener()
@@ -47,5 +47,10 @@ class ReviewActivity : AppCompatActivity() {
         binding.ivReviewAppBarArrowleft.setOnClickListener {
             finish()
         }
+    }
+
+
+    companion object {
+        const val REVIEW_ID = 2
     }
 }
