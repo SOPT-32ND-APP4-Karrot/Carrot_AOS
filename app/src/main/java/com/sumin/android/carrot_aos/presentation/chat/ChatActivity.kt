@@ -8,10 +8,12 @@ import com.sumin.android.carrot_aos.data.model.response.ChatResponse
 import com.sumin.android.carrot_aos.databinding.ActivityChatBinding
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
 import com.sumin.android.carrot_aos.util.extension.changePriceFormat
+import com.sumin.android.carrot_aos.util.extension.newTimeFormat
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChatBinding
     private val viewModel by viewModels<ChatViewModel>()
+    private lateinit var chatAdapter: ChatAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class ChatActivity : AppCompatActivity() {
         changeSendBtnImageResource()
 
         ivChatAppBarArrowleftClickListener()
+        ivChatBottomAppBarSendClickListener()
     }
 
     private fun setChatResultObserver() {
@@ -60,7 +63,7 @@ class ChatActivity : AppCompatActivity() {
         chatMessageList: List<ChatResponse.ChatMessage>,
         seller: ChatResponse.Seller
     ) {
-        val chatAdapter = ChatAdapter(this)
+        chatAdapter = ChatAdapter(this)
         chatAdapter.setSellerInfo(seller)
         chatAdapter.submitList(chatMessageList)
         binding.rvChatChatting.adapter = chatAdapter
@@ -69,6 +72,20 @@ class ChatActivity : AppCompatActivity() {
     private fun ivChatAppBarArrowleftClickListener() {
         binding.ivChatAppBarArrowleft.setOnClickListener {
             finish()
+        }
+    }
+
+    private fun ivChatBottomAppBarSendClickListener() {
+        with(binding) {
+            ivChatBottomAppBarSend.setOnClickListener {
+                if (!viewModel?.chatInput?.value.isNullOrBlank()) {
+                    chatAdapter.addChatMessage(
+                        viewModel?.chatInput?.value.toString(),
+                        newTimeFormat()
+                    )
+                    etChatBottomAppBarInput.text = null
+                }
+            }
         }
     }
 }
