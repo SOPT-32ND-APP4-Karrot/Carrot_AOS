@@ -106,6 +106,20 @@ class ChatAdapter(context: Context) :
         this.sellerInfo = seller
     }
 
+    fun addChatMessage(content: String, time: String) {
+        val tempCurrentChatMessage = mutableListOf<ChatResponse.ChatMessage>()
+        tempCurrentChatMessage.addAll(currentList)
+        val newChatMessage = ChatResponse.ChatMessage(
+            chatMessageId = currentList[currentList.size - 1].chatMessageId + 1,
+            content = content,
+            hasKeyword = false,
+            time = time,
+            writer = myInfo
+        )
+        tempCurrentChatMessage.add(newChatMessage)
+        submitList(tempCurrentChatMessage)
+    }
+
     companion object {
         const val VIEW_TYPE_CHAT_RIGHT = 0
         const val VIEW_TYPE_CHAT_LEFT = 1
