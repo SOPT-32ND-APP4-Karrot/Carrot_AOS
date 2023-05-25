@@ -1,7 +1,6 @@
 package com.sumin.android.carrot_aos.presentation.review
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.sumin.android.carrot_aos.data.model.response.ReviewResponse
@@ -16,9 +15,10 @@ class ReviewActivity : AppCompatActivity() {
         binding = ActivityReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //viewModel.connectReviewOnline(intent.getStringExtra("reviewId")?.toLong() ?: 0)
-        viewModel.connectReviewOnline(2)
+        viewModel.connectReviewOnline(intent.getStringExtra("reviewId")?.toLong() ?: 0)
         setReviewResultObserver()
+
+        ivReviewAppBarArrowleftClickListener()
     }
 
     private fun setReviewResultObserver() {
@@ -40,6 +40,12 @@ class ReviewActivity : AppCompatActivity() {
             }
             reviewAdapter.submitList(reviewList)
             binding.rvReviewCard.adapter = reviewAdapter
+        }
+    }
+
+    private fun ivReviewAppBarArrowleftClickListener() {
+        binding.ivReviewAppBarArrowleft.setOnClickListener {
+            finish()
         }
     }
 }
