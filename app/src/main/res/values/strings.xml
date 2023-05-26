@@ -4,6 +4,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chat_price_suggestion_available">(가격제안가능)</string>
     <string name="chat_price_suggestion_unavailable">(가격제안불가)</string>
+    <!--    bottom navigation menu    -->
+    <string name="menu_home">홈</string>
+    <string name="menu_town">동네생활</string>
+    <string name="menu_nearby">내 근처</string>
+    <string name="menu_chat">채팅</string>
+    <string name="menu_my_info">나의 당근</string>
+    <!--    dummy text    -->
+    <string name="dummy_town">이건 동네생활 뷰</string>
+    <string name="dummy_nearby">이건 내 근처 뷰</string>
+    <string name="dummy_chat">이건 채팅 뷰</string>
+    <string name="dummy_my_info">이건 나의 당근 뷰</string>
     <!--    review 뷰    -->
     <string name="item_review_button_my_manner">내 매너 평가 보기</string>
 </resources>
