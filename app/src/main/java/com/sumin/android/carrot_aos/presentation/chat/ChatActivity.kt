@@ -1,11 +1,13 @@
 package com.sumin.android.carrot_aos.presentation.chat
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.data.model.response.ChatResponse
 import com.sumin.android.carrot_aos.databinding.ActivityChatBinding
+import com.sumin.android.carrot_aos.presentation.review.ReviewActivity
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
 import com.sumin.android.carrot_aos.util.extension.changePriceFormat
 import com.sumin.android.carrot_aos.util.extension.newTimeFormat
@@ -92,10 +94,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun btnChatExtendedAppBarViewReviewClickListener() {
         binding.btnChatExtendedAppBarViewReview.setOnClickListener {
-//            val intent = Intent(this, reviewView::class.java).apply {
-//                putExtra("reviewId", viewModel.chatResult.value?.data?.reviewId)
-//            }
-//            startActivity(intent)
+            startActivity(Intent(this, ReviewActivity::class.java))
         }
     }
 }
