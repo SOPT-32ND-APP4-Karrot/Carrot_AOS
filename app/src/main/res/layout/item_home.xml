@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="14dp"
+    android:paddingBottom="16dp">
+
+    <View
+        android:id="@+id/view_home_item_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_home_item"
+        android:layout_width="95dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/img_home_ad" />
+
+    <TextView
+        android:id="@+id/tv_home_item_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.Carrot.Body2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_home_item"
+        app:layout_constraintTop_toTopOf="@id/iv_home_item"
+        tools:text="스타벅스 다이어리 그린 9,000원 (쿠폰 없음)" />
+
+    <TextView
+        android:id="@+id/tv_home_item_where"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.Carrot.Body4"
+        android:textColor="@color/gray_4"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_item_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_item_content"
+        tools:text="서강동" />
+
+    <TextView
+        android:id="@+id/tv_home_item_separate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text=" · "
+        android:textAppearance="@style/TextAppearance.Carrot.Body4"
+        android:textColor="@color/gray_4"
+        app:layout_constraintStart_toEndOf="@id/tv_home_item_where"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_item_content" />
+
+    <TextView
+        android:id="@+id/tv_home_item_reupload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="끌올 "
+        android:textAppearance="@style/TextAppearance.Carrot.Body4"
+        android:textColor="@color/gray_4"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/tv_home_item_separate"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_item_content" />
+
+    <TextView
+        android:id="@+id/tv_home_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Carrot.Body4"
+        android:textColor="@color/gray_4"
+        app:layout_constraintStart_toEndOf="@id/tv_home_item_reupload"
+        app:layout_constraintTop_toTopOf="@+id/tv_home_item_where"
+        tools:text="13초 전" />
+
+    <TextView
+        android:id="@+id/tv_home_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.Carrot.Number1"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_item_where"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_item_where"
+        tools:text="8,800원" />
+
+    <ImageView
+        android:id="@+id/iv_home_item_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sale_heart_default" />
+
+    <TextView
+        android:id="@+id/tv_home_item_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Carrot.Body4"
+        tools:text="7" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_home_item_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_home_item_like,tv_home_item_like"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
