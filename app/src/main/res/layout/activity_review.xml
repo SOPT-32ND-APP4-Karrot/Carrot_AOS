@@ -45,10 +45,26 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_review_button_my_manner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_review_app_bar"
         tools:listitem="@layout/item_review_card" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_review_button_my_manner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/shape_orange_fill_6_rect"
+        android:paddingTop="10dp"
+        android:paddingBottom="7dp"
+        android:text="@string/item_review_button_my_manner"
+        android:textAppearance="@style/TextAppearance.Carrot.Title"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

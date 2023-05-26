@@ -3,6 +3,7 @@ package com.sumin.android.carrot_aos.data.entity
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.sumin.android.carrot_aos.BuildConfig
 import com.sumin.android.carrot_aos.data.service.ChatService
+import com.sumin.android.carrot_aos.data.service.ReviewService
 import com.sumin.android.carrot_aos.data.service.UserIdService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -33,4 +34,5 @@ object ApiFactory {
 object ServicePool {
     val chatService = ApiFactory.create<ChatService>()
     val UserIdService = ApiFactory.create<UserIdService>()
+    val reviewService = ApiFactory.create<ReviewService>()
 }

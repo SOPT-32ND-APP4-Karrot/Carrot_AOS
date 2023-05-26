@@ -15,5 +15,6 @@
     <string name="dummy_nearby">이건 내 근처 뷰</string>
     <string name="dummy_chat">이건 채팅 뷰</string>
     <string name="dummy_my_info">이건 나의 당근 뷰</string>
-
+    <!--    review 뷰    -->
+    <string name="item_review_button_my_manner">내 매너 평가 보기</string>
 </resources>
