@@ -17,8 +17,11 @@ data class SaleFilledResponse (
 ){
     @Serializable
     data class Data(
+        @SerialName("saleId")
         val saleId: Int,
+        @SerialName("isLike")
         val isLike: Boolean,
+        @SerialName("Count")
         val Count: Int,
     )
 }

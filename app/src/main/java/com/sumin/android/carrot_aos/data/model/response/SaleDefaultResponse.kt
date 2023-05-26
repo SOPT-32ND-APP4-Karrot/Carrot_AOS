@@ -16,8 +16,11 @@ data class SaleDefaultResponse (
 ){
     @Serializable
     data class Data(
+        @SerialName("saleId")
         val saleId: Int,
+        @SerialName("isCheckLike")
         val isCheckLike: Boolean,
+        @SerialName("likeCount")
         val likeCount: Int,
     )
 }

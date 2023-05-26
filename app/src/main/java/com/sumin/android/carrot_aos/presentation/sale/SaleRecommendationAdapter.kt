@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sumin.android.carrot_aos.data.model.response.SaleRecommendationResponse
 import com.sumin.android.carrot_aos.databinding.ItemRecommendationBinding
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
+import com.sumin.android.carrot_aos.util.extension.changePriceFormat
 
 class SaleRecommendationAdapter :
     ListAdapter<SaleRecommendationResponse.Data, SaleRecommendationAdapter.RecommendationViewHolder>(
@@ -31,7 +32,7 @@ class SaleRecommendationAdapter :
         fun onBind(item: SaleRecommendationResponse.Data) {
             binding.ivRecommendationImage.loadImage(item.saleImgUrl)
             binding.tvRecommendationSaletitle.text = item.title
-            binding.tvRecommendationPrice.text = item.price.toString() + "원"
+            binding.tvRecommendationPrice.text = "${changePriceFormat(item.price)}원"
         }
     }
 

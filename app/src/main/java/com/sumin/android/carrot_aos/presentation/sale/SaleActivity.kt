@@ -12,6 +12,7 @@ import com.sumin.android.carrot_aos.data.model.response.SaleUserIdResponse
 import com.sumin.android.carrot_aos.databinding.ActivitySaleBinding
 import com.sumin.android.carrot_aos.presentation.base.BindingActivity
 import com.sumin.android.carrot_aos.presentation.chat.ChatActivity
+import com.sumin.android.carrot_aos.presentation.home.HomeActivity
 import com.sumin.android.carrot_aos.presentation.home.HomeFragment
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
 import com.sumin.android.carrot_aos.util.extension.changeTimeFormat
@@ -92,7 +93,8 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
                         binding.ivSaleidUserimg.loadImage(it.data.user.profileImgUrl)
                         binding.tvSaleidUsername.text = it.data.user.nickname
                         binding.tvSaleidUserposition.text = it.data.user.location
-                        binding.tvSaleidTemperature.text = "${it.data.user.temperature.toString()}°C"
+                        binding.tvSaleidTemperature.text =
+                            "${it.data.user.temperature.toString()}°C"
                         binding.tvSaleidTitle.text = it.data.sale.title
                         binding.tvSaleidCategory.text = it.data.sale.category
                         binding.tvSaleidLikesee.text =
@@ -118,6 +120,7 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
                             response: Response<SaleDefaultResponse>
                         ) {
                             it.isSelected = false
+
                         }
 
                         override fun onFailure(call: Call<SaleDefaultResponse>, t: Throwable) {
@@ -134,6 +137,7 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
                             response: Response<SaleFilledResponse>
                         ) {
                             it.isSelected = true
+
                         }
 
                         override fun onFailure(call: Call<SaleFilledResponse>, t: Throwable) {
@@ -145,19 +149,11 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
             }
         }
 
-        with(binding) {
 
-            icSaleBack.setOnClickListener {
+        btnSaleChattingClickListener()
+        icSaleBackClickListener()
+        btnSaleHomeClickListener()
 
-            }
-            icSaleHome.setOnClickListener {
-
-            }
-
-
-            btnSaleChattingClickListener()
-
-        }
 
     }
 
@@ -171,17 +167,16 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
     }
 
     private fun icSaleBackClickListener() {
-        binding.btnSaleChatting.setOnClickListener {
+        binding.icSaleBack.setOnClickListener {
             finish()
         }
     }
 
-//    private fun btnSaleHomeClickListener() {
-//        binding.btnSaleChatting.setOnClickListener {
-//            val intent = Intent(this, HomeFragment::class.java)
-//            intent.putExtra("ChatRoomId",  )
-//            startActivity(intent)
-//        }
-//    }
+    private fun btnSaleHomeClickListener() {
+        binding.icSaleHome.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+    }
 }
 
