@@ -4,6 +4,9 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import com.sumin.android.carrot_aos.BuildConfig
 import com.sumin.android.carrot_aos.data.service.ChatService
 import com.sumin.android.carrot_aos.data.service.ReviewService
+import com.sumin.android.carrot_aos.data.service.HeartService
+import com.sumin.android.carrot_aos.data.service.RecommendationService
+import com.sumin.android.carrot_aos.data.service.SaleIdService
 import com.sumin.android.carrot_aos.data.service.UserIdService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -35,4 +38,11 @@ object ServicePool {
     val chatService = ApiFactory.create<ChatService>()
     val UserIdService = ApiFactory.create<UserIdService>()
     val reviewService = ApiFactory.create<ReviewService>()
+}
+object SaleServicePool {
+    val SaleIdService = SaleApiFactory.create<SaleIdService>()
+    val UserIdService = SaleApiFactory.create<UserIdService>()
+    val RecommendationService = SaleApiFactory.create<RecommendationService>()
+    val HeartService = SaleApiFactory.create<HeartService>()
+
 }

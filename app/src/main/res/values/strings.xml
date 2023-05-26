@@ -17,4 +17,6 @@
     <string name="dummy_my_info">이건 나의 당근 뷰</string>
     <!--    review 뷰    -->
     <string name="item_review_button_my_manner">내 매너 평가 보기</string>
+    <string name="item_chat_announcement_title">안내</string>
+    <string name="item_chat_announcement_detail"><u>자세히 보기</u></string>
 </resources>
