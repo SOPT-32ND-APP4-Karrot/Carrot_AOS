@@ -27,7 +27,7 @@ class SaleUserIdAdapter: ListAdapter<SaleUserIdResponse.Data.Sale, SaleUserIdAda
 
         fun onBind(item: SaleUserIdResponse.Data.Sale) {
             binding.ivUseridSaleimg.loadImage(item.saleImgUrl)
-            binding.tvUseridSaletitle.text = item.title
+            binding.tvUseridSaletitle.text= item.title
             binding.tvUseridPrice.text = item.price.toString() + "원"
         }
     }
