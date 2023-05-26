@@ -23,7 +23,7 @@ class ChatActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.viewModel = viewModel
 
-        viewModel.connectChatOnline(1)
+        viewModel.connectChatOnline(3)
         setChatResultObserver()
         changeSendBtnImageResource()
 
@@ -94,7 +94,10 @@ class ChatActivity : AppCompatActivity() {
 
     private fun btnChatExtendedAppBarViewReviewClickListener() {
         binding.btnChatExtendedAppBarViewReview.setOnClickListener {
-            startActivity(Intent(this, ReviewActivity::class.java))
+            val intent = Intent(this, ReviewActivity::class.java).apply {
+                putExtra("sellerName", viewModel.chatResult.value!!.data.seller.nickname)
+            }
+            startActivity(intent)
         }
     }
 }
