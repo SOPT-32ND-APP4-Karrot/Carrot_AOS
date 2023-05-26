@@ -2,6 +2,7 @@ package com.sumin.android.carrot_aos.presentation.chat
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.sumin.android.carrot_aos.R
@@ -23,7 +24,14 @@ class ChatActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.viewModel = viewModel
 
-        viewModel.connectChatOnline(3)
+        val roomId = intent.getIntExtra("roomId", 1).toLong()
+        if (roomId > 0) {
+            viewModel.connectChatOnline(intent.getIntExtra("roomId", 1).toLong())
+        }
+        else {
+            viewModel.connectChatOnline(1)
+        }
+
         setChatResultObserver()
         changeSendBtnImageResource()
 
@@ -59,6 +67,8 @@ class ChatActivity : AppCompatActivity() {
                 if (chatResponse.data.sale.isSuggest) getString(R.string.chat_price_suggestion_available) else getString(
                     R.string.chat_price_suggestion_unavailable
                 )
+            tvChatAppBarMannerTemperature.text =
+                "${intent.getLongExtra("temp", 36.5.toLong()).toString()}°C"
         }
     }
 

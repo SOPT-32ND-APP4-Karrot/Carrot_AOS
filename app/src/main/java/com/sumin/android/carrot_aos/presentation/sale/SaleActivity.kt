@@ -3,6 +3,7 @@ package com.sumin.android.carrot_aos.presentation.sale
 import SaleServicePool
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import coil.load
 import com.sumin.android.carrot_aos.R
@@ -101,6 +102,8 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
                             "관심 ${it.data.sale.likeCount}  ·  조회 ${it.data.sale.viewCount}"
                         binding.tvSaleidDescription.text = it.data.sale.description
 
+                        chatRoomId = it.data.chatRoomId
+                        mannerTemperature = it.data.user.temperature
                     }
                 }
             }
@@ -160,10 +163,12 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
     private fun btnSaleChattingClickListener() {
         binding.btnSaleChatting.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
+            Log.d("ㅋㅋㅋ", chatRoomId.toString() + " " + mannerTemperature.toString())
             intent.putExtra("roomId", chatRoomId)
             intent.putExtra("temp", mannerTemperature)
             startActivity(intent)
         }
+        //Log.d("ㅋㅋㅋ", chatRoomId.toString() + " " + mannerTemperature.toString())
     }
 
     private fun icSaleBackClickListener() {
