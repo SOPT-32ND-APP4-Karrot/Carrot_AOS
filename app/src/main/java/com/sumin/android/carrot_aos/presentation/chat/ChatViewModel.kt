@@ -3,7 +3,6 @@ package com.sumin.android.carrot_aos.presentation.chat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sumin.android.carrot_aos.data.entity.ServicePool
 import com.sumin.android.carrot_aos.data.model.request.ChatRequest
 import com.sumin.android.carrot_aos.data.model.response.ChatResponse
 import retrofit2.Call
