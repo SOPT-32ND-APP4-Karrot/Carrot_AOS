@@ -1,11 +1,17 @@
 package com.sumin.android.carrot_aos.presentation.sale
 
+import SaleServicePool
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.widget.GridLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import com.sumin.android.carrot_aos.R
-import com.sumin.android.carrot_aos.data.model.response.SaleUserIdResponse
+import com.sumin.android.carrot_aos.data.model.response.*
+import com.sumin.android.carrot_aos.data.service.SaleIdService
 import com.sumin.android.carrot_aos.databinding.ActivitySaleBinding
 import com.sumin.android.carrot_aos.presentation.base.BindingActivity
+import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
 import retrofit2.Call
 import retrofit2.Response
 
