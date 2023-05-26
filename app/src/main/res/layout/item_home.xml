@@ -94,6 +94,30 @@
         tools:text="8,800원" />
 
     <ImageView
+        android:id="@+id/iv_home_item_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_home_down"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_item_price"
+        app:layout_constraintStart_toEndOf="@id/tv_home_item_price"
+        app:layout_constraintTop_toTopOf="@id/tv_home_item_price" />
+
+    <TextView
+        android:id="@+id/tv_home_item_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="down"
+        android:textAppearance="@style/TextAppearance.Carrot.Body4"
+        android:textColor="?colorPrimary"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_home_item_down"
+        app:layout_constraintStart_toEndOf="@+id/iv_home_item_down"
+        app:layout_constraintTop_toTopOf="@+id/iv_home_item_down" />
+
+    <ImageView
         android:id="@+id/iv_home_item_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
