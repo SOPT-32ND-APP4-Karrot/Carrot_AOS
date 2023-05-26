@@ -30,9 +30,9 @@ class ReviewActivity : AppCompatActivity() {
     private fun connectReviewAdapter(reviewResponse: ReviewResponse?) {
         val reviewAdapter = ReviewAdapter(this)
         val reviewList = mutableListOf<ReviewResponse.Review>()
+        intent.getStringExtra("sellerName")?.let { reviewAdapter.setSellerNickname(it) }
 
         if (reviewResponse != null) {
-            reviewAdapter.setSellerInfo(reviewResponse.data.receiverReview.writer)
             with(reviewResponse.data) {
                 reviewList.add(senderReview)
                 reviewList.add(receiverReview)

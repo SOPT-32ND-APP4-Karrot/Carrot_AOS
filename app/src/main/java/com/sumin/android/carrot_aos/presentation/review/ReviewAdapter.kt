@@ -18,22 +18,22 @@ class ReviewAdapter(context: Context) :
         )
     ) {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private lateinit var sellerInfo: ReviewResponse.Writer
     private val context = context
+    private lateinit var sellerNickname: String
 
     class ReviewCardViewHolder(
         private val binding: ItemReviewCardBinding,
-        private val seller: ReviewResponse.Writer,
+        private val sellerNickname: String,
         private val context: Context
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ReviewResponse.Review, viewType: Int) {
             when (viewType) {
                 VIEW_TYPE_MINT -> binding.tvItemReviewTitle.text =
-                    "${seller.nickname}님에게\n따뜻한 후기를 보냈어요."
+                    "${sellerNickname}님에게\n따뜻한 후기를 보냈어요."
 
                 VIEW_TYPE_LIGHT_YELLOW -> {
                     with(binding) {
-                        tvItemReviewTitle.text = "${seller.nickname}님이 보낸\n 따뜻한 후기가 도착했어요."
+                        tvItemReviewTitle.text = "${sellerNickname}님이 보낸\n 따뜻한 후기가 도착했어요."
                         ivItemReviewCardImg.setImageResource(R.drawable.img_review_card_lightyellow)
                         layoutItemReviewCard.setBackgroundResource(R.drawable.shape_lightyellow_fill_20_rect)
                     }
@@ -48,7 +48,7 @@ class ReviewAdapter(context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding = ItemReviewCardBinding.inflate(inflater, parent, false)
-        return ReviewCardViewHolder(binding, sellerInfo, context)
+        return ReviewCardViewHolder(binding, sellerNickname, context)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -67,8 +67,8 @@ class ReviewAdapter(context: Context) :
         }
     }
 
-    fun setSellerInfo(seller: ReviewResponse.Writer) {
-        this.sellerInfo = seller
+    fun setSellerNickname(nickname: String) {
+        this.sellerNickname = nickname
     }
 
     companion object {
