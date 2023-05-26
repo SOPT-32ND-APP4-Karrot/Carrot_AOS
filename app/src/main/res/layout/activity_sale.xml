@@ -6,6 +6,10 @@
 
     <data>
 
+        <variable
+            name="data"
+            type="com.sumin.android.carrot_aos.data.model.response.SaleIdResponse" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,7 +66,8 @@
             android:id="@+id/sv_saleview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-16dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -73,10 +78,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sale_exmpic3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_sale_exmpic3" />
 
                 <ImageView
                     android:id="@+id/iv_saleid_userimg"
@@ -84,9 +89,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="18dp"
-                    android:src="@drawable/ic_sale_profile"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg"
+                    tools:src="@drawable/ic_sale_profile" />
 
                 <TextView
                     android:id="@+id/tv_saleid_username"
@@ -114,14 +119,13 @@
                     android:id="@+id/tv_saleid_temperature"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginStart="186dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
-                    android:text="40.4°C"
                     android:textAppearance="@style/TextAppearance.Carrot.Number3"
                     android:textColor="@color/green"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_saleid_saleimg"
+                    tools:text="40.4°C" />
 
                 <ProgressBar
                     android:id="@+id/pb_saleid_progressbar"
@@ -131,7 +135,7 @@
                     android:layout_marginStart="183dp"
                     android:layout_marginEnd="16dp"
                     android:max="100"
-                    android:progress="60"
+                    android:progress="40"
                     android:progressTint="@color/green"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_saleid_temperature" />
@@ -159,15 +163,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_saleid_mannertemtext" />
 
                 <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:id="@+id/tv_saleid_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="22dp"
-                    android:text="스타벅스 다이어리 그린 9,000(쿠폰 없음)"
                     android:textAppearance="@style/TextAppearance.Carrot.Title"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_saleid_line" />
+                    app:layout_constraintTop_toBottomOf="@+id/view_saleid_line"
+                    tools:text="스타벅스 다이어리 그린 9,000(쿠폰 없음)" />
 
                 <TextView
                     android:id="@+id/tv_saleid_category"
@@ -175,23 +180,23 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="10dp"
-                    android:text="여성잡화"
                     android:textAppearance="@style/TextAppearance.Carrot.Body4"
                     android:textColor="@color/gray_4"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_saleid_title" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_saleid_title"
+                    tools:text="여성잡화" />
 
                 <TextView
                     android:id="@+id/tv_saleid_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
-                    android:text="·1분전"
                     android:textAppearance="@style/TextAppearance.Carrot.Body4"
                     android:textColor="@color/gray_4"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_saleid_category"
                     app:layout_constraintStart_toEndOf="@id/tv_saleid_category"
-                    app:layout_constraintTop_toTopOf="@+id/tv_saleid_category" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_saleid_category"
+                    tools:text="·1분전" />
 
                 <TextView
                     android:id="@+id/tv_saleid_likesee"
@@ -199,11 +204,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:layout_marginEnd="19dp"
-                    android:text="관심  · 조회"
                     android:textAppearance="@style/TextAppearance.Carrot.Body4"
                     android:textColor="@color/gray_4"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_title"
+                    tools:text="관심  · 조회" />
 
 
                 <TextView
@@ -212,10 +217,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
-                    android:text="쿠폰 빼고 드려요\n직거래시 9,000(광흥창역, 광화문역등)\n택배거래시 택배비 발생합니다"
                     android:textAppearance="@style/TextAppearance.Carrot.Body2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_likesee" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saleid_likesee"
+                    tools:text="쿠폰 빼고 드려요\n직거래시 9,000(광흥창역, 광화문역등)\n택배거래시 택배비 발생합니다" />
 
                 <TextView
                     android:id="@+id/tv_saleid_report"
@@ -513,7 +518,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_sale_bottombar"
             android:layout_width="0dp"
@@ -538,7 +542,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
-                android:src="@drawable/ic_sale_heart_default"
+                android:src="@drawable/selector_sale_heart"
                 app:layout_constraintBottom_toBottomOf="@id/tv_like_pricesuggest"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_like_price" />
@@ -561,7 +565,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:text="9,000원"
+                tools:text="9,000원"
                 android:textAppearance="@style/TextAppearance.Carrot.Body3"
                 app:layout_constraintBottom_toTopOf="@id/tv_like_pricesuggest"
                 app:layout_constraintStart_toEndOf="@id/view_like_line2"
@@ -595,8 +599,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="13dp"
-                android:background="@drawable/shape_image_fill_4_rect"
-                android:backgroundTint="@color/orange"
+                android:src="@drawable/shape_image_fill_4_rect"
+                android:background = "@drawable/selector_sale_chatbtn"
                 android:paddingHorizontal="14dp"
                 android:paddingVertical="12dp"
                 android:text="채팅하기"

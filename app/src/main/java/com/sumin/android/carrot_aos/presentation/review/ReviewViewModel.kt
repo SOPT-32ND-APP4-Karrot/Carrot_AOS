@@ -3,7 +3,6 @@ package com.sumin.android.carrot_aos.presentation.review
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sumin.android.carrot_aos.data.entity.ServicePool
 import com.sumin.android.carrot_aos.data.model.request.ReviewRequest
 import com.sumin.android.carrot_aos.data.model.response.ReviewResponse
 import retrofit2.Call

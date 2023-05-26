@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_sale_exmpic4" />
@@ -39,8 +40,7 @@
         android:layout_marginTop="3dp"
         android:textAppearance="@style/TextAppearance.Carrot.Body3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_userid_saletitle"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/tv_userid_saletitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
