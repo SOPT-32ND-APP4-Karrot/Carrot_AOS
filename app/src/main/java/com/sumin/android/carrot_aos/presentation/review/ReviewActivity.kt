@@ -36,7 +36,6 @@ class ReviewActivity : AppCompatActivity() {
             with(reviewResponse.data) {
                 reviewList.add(senderReview)
                 reviewList.add(receiverReview)
-                reviewList.add(receiverReview)
             }
             reviewAdapter.submitList(reviewList)
             binding.rvReviewCard.adapter = reviewAdapter

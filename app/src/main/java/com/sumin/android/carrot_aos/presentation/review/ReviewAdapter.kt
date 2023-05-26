@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.data.model.response.ReviewResponse
-import com.sumin.android.carrot_aos.databinding.ItemReviewButtonBinding
 import com.sumin.android.carrot_aos.databinding.ItemReviewCardBinding
 import com.sumin.android.carrot_aos.util.extension.ItemDiffCallback
 
@@ -47,24 +46,9 @@ class ReviewAdapter(context: Context) :
         }
     }
 
-    class MyMannerViewHolder(
-        private val binding: ItemReviewButtonBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return when (viewType) {
-            VIEW_TYPE_BUTTON -> {
-                val binding = ItemReviewButtonBinding.inflate(inflater, parent, false)
-                MyMannerViewHolder(binding)
-            }
-
-            else -> {
-                val binding = ItemReviewCardBinding.inflate(inflater, parent, false)
-                ReviewCardViewHolder(binding, sellerInfo, context)
-            }
-        }
+        val binding = ItemReviewCardBinding.inflate(inflater, parent, false)
+        return ReviewCardViewHolder(binding, sellerInfo, context)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -79,7 +63,6 @@ class ReviewAdapter(context: Context) :
     override fun getItemViewType(position: Int): Int {
         return when (position) {
             0 -> VIEW_TYPE_MINT
-            currentList.size - 1 -> VIEW_TYPE_BUTTON
             else -> VIEW_TYPE_LIGHT_YELLOW
         }
     }
@@ -91,6 +74,5 @@ class ReviewAdapter(context: Context) :
     companion object {
         const val VIEW_TYPE_MINT = 0
         const val VIEW_TYPE_LIGHT_YELLOW = 1
-        const val VIEW_TYPE_BUTTON = 2
     }
 }
