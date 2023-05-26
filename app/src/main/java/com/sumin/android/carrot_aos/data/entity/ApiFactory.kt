@@ -1,7 +1,9 @@
 
+import androidx.datastore.preferences.protobuf.Api
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.sumin.android.carrot_aos.BuildConfig
 import com.sumin.android.carrot_aos.data.service.ChatService
+import com.sumin.android.carrot_aos.data.service.HomeService
 import com.sumin.android.carrot_aos.data.service.ReviewService
 import com.sumin.android.carrot_aos.data.service.HeartService
 import com.sumin.android.carrot_aos.data.service.RecommendationService
@@ -42,6 +44,7 @@ object SaleServicePool {
 }
 
 object ServicePool {
+    val homeService = ApiFactory.create<HomeService>()
     val chatService = ApiFactory.create<ChatService>()
     val UserIdService = ApiFactory.create<UserIdService>()
     val reviewService = ApiFactory.create<ReviewService>()
