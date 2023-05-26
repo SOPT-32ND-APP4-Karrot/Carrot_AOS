@@ -1,11 +1,13 @@
 # 📚 Carrot-AOS 📚
 
-> IN SOPT 32TH 합동 세미나 모바일 4조 Android팀 <br>
+> GO SOPT 32ND 합동 세미나 모바일 4조 Android팀 <br>
 23.05.13 - 23.05.26
 
 <br>
 
 ## Video
+https://github.com/SOPT-32ND-APP4-Karrot/Carrot_AOS/assets/74162198/85813021-6c4f-4567-8043-db6692d643b6
+
 
 
 <br>
