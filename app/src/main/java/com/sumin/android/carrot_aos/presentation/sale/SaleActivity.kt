@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.data.model.response.*
 import com.sumin.android.carrot_aos.data.service.SaleIdService
+import com.sumin.android.carrot_aos.data.model.response.SaleUserIdResponse
 import com.sumin.android.carrot_aos.databinding.ActivitySaleBinding
 import com.sumin.android.carrot_aos.presentation.base.BindingActivity
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
@@ -137,6 +138,9 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
                     )
             }
         }
+    }
+
+        btnSaleChattingClickListener()
     }
 
     private fun btnSaleChattingClickListener() {

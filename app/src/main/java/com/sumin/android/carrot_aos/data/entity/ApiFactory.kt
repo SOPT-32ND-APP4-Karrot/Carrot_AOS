@@ -1,4 +1,3 @@
-package com.sumin.android.carrot_aos.data.entity
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.sumin.android.carrot_aos.BuildConfig
@@ -31,8 +30,15 @@ object ApiFactory {
             .build()
     }
 
+
     inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
 }
+
+object SaleServicePool {
+    val SaleIdService = SaleApiFactory.create<SaleIdService>()
+    val UserIdService = SaleApiFactory.create<UserIdService>()
+    val RecommendationService = SaleApiFactory.create<RecommendationService>()
+    val HeartService = SaleApiFactory.create<HeartService>()
 
 object ServicePool {
     val chatService = ApiFactory.create<ChatService>()
