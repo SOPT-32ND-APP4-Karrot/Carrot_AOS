@@ -1,4 +1,3 @@
-package com.sumin.android.carrot_aos.data.entity
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.sumin.android.carrot_aos.BuildConfig
@@ -40,6 +39,7 @@ object SaleServicePool {
     val UserIdService = ApiFactory.create<UserIdService>()
     val RecommendationService = ApiFactory.create<RecommendationService>()
     val HeartService = ApiFactory.create<HeartService>()
+}
 
 object ServicePool {
     val chatService = ApiFactory.create<ChatService>()

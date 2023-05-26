@@ -10,6 +10,7 @@ import coil.load
 import com.sumin.android.carrot_aos.data.model.response.SaleUserIdResponse
 import com.sumin.android.carrot_aos.databinding.ItemUseridBinding
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
+import com.sumin.android.carrot_aos.util.extension.changePriceFormat
 
 class SaleUserIdAdapter: ListAdapter<SaleUserIdResponse.Data.Sale, SaleUserIdAdapter.useridViewHolder>(diffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): useridViewHolder {
@@ -28,7 +29,7 @@ class SaleUserIdAdapter: ListAdapter<SaleUserIdResponse.Data.Sale, SaleUserIdAda
         fun onBind(item: SaleUserIdResponse.Data.Sale) {
             binding.ivUseridSaleimg.loadImage(item.saleImgUrl)
             binding.tvUseridSaletitle.text= item.title
-            binding.tvUseridPrice.text = item.price.toString() + "원"
+            binding.tvUseridPrice.text = "${changePriceFormat(item.price)}원"
         }
     }
 

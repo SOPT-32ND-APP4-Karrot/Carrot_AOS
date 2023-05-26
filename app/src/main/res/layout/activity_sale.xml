@@ -24,7 +24,6 @@
             android:layout_marginStart="21dp"
             android:layout_marginTop="19dp"
             android:elevation="10dp"
-
             android:src="@drawable/ic_sale_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -136,7 +135,7 @@
                     android:layout_marginStart="183dp"
                     android:layout_marginEnd="16dp"
                     android:max="100"
-                    android:progress="60"
+                    android:progress="40"
                     android:progressTint="@color/green"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_saleid_temperature" />
@@ -164,12 +163,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_saleid_mannertemtext" />
 
                 <TextView
+                    android:layout_marginHorizontal="16dp"
                     android:id="@+id/tv_saleid_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="22dp"
                     android:textAppearance="@style/TextAppearance.Carrot.Title"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view_saleid_line"
                     tools:text="스타벅스 다이어리 그린 9,000(쿠폰 없음)" />
@@ -565,7 +565,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:text="9,000원"
+                tools:text="9,000원"
                 android:textAppearance="@style/TextAppearance.Carrot.Body3"
                 app:layout_constraintBottom_toTopOf="@id/tv_like_pricesuggest"
                 app:layout_constraintStart_toEndOf="@id/view_like_line2"
@@ -599,8 +599,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="13dp"
-                android:background="@drawable/shape_image_fill_4_rect"
-                android:backgroundTint="@color/orange"
+                android:src="@drawable/shape_image_fill_4_rect"
+                android:background = "@drawable/selector_sale_chatbtn"
                 android:paddingHorizontal="14dp"
                 android:paddingVertical="12dp"
                 android:text="채팅하기"

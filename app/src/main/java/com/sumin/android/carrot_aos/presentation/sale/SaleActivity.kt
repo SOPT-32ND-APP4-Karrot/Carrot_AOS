@@ -1,18 +1,20 @@
 package com.sumin.android.carrot_aos.presentation.sale
 
 import SaleServicePool
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.GridLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import coil.load
 import com.sumin.android.carrot_aos.R
 import com.sumin.android.carrot_aos.data.model.response.*
 import com.sumin.android.carrot_aos.data.service.SaleIdService
 import com.sumin.android.carrot_aos.data.model.response.SaleUserIdResponse
 import com.sumin.android.carrot_aos.databinding.ActivitySaleBinding
 import com.sumin.android.carrot_aos.presentation.base.BindingActivity
+import com.sumin.android.carrot_aos.presentation.chat.ChatActivity
+import com.sumin.android.carrot_aos.presentation.home.HomeFragment
 import com.sumin.android.carrot_aos.util.binding.BindingAdapter.loadImage
+import com.sumin.android.carrot_aos.util.extension.changeTimeFormat
 import retrofit2.Call
 import retrofit2.Response
 
@@ -21,6 +23,10 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
     private val RecommendationService = SaleServicePool.RecommendationService
     private val SaleIdService = SaleServicePool.SaleIdService
     private val HeartService = SaleServicePool.HeartService
+
+    private var chatRoomId: Int = 0
+    private var mannerTemperature: Double = 0.0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -138,16 +144,44 @@ class SaleActivity : BindingActivity<ActivitySaleBinding>(R.layout.activity_sale
                     )
             }
         }
-    }
 
-        btnSaleChattingClickListener()
+        with(binding) {
+
+            icSaleBack.setOnClickListener {
+
+            }
+            icSaleHome.setOnClickListener {
+
+            }
+
+
+            btnSaleChattingClickListener()
+
+        }
+
     }
 
     private fun btnSaleChattingClickListener() {
         binding.btnSaleChatting.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
+            intent.putExtra("roomId", chatRoomId)
+            intent.putExtra("temp", mannerTemperature)
             startActivity(intent)
         }
     }
+
+    private fun icSaleBackClickListener() {
+        binding.btnSaleChatting.setOnClickListener {
+            finish()
+        }
+    }
+
+//    private fun btnSaleHomeClickListener() {
+//        binding.btnSaleChatting.setOnClickListener {
+//            val intent = Intent(this, HomeFragment::class.java)
+//            intent.putExtra("ChatRoomId",  )
+//            startActivity(intent)
+//        }
+//    }
 }
 
