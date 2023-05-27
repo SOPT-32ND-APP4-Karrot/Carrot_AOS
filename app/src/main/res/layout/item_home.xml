@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_home_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="14dp"
@@ -121,7 +122,7 @@
         android:id="@+id/iv_home_item_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_sale_heart_default" />
+        android:src="@drawable/sel_home_item_like" />
 
     <TextView
         android:id="@+id/tv_home_item_like"
